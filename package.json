@@ -1,0 +1,22 @@
+{
+  "name": "bulib-firstyear",
+  "description": "welcome and orientation to the BU libraries for first year students",
+  "devDependencies": {
+    "bulib-wc": "0.1.32",
+    "es-dev-server": "^1.48.1"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules/ || true && npm i",
+    "start": "es-dev-server --watch ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bulib/bulib.github.io.git"
+  },
+  "author": "BU Libraries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bulib/bulib.github.io/issues"
+  },
+  "homepage": "https://github.com/bulib/bulib.github.io#readme"
+}
