@@ -1,0 +1,50 @@
+/* header (.primary navigation)  */
+.header-wrapper { z-index: 3; }
+.banner-wrapper { box-shadow: none;}
+#mobile-menu, .bu-banner-content { 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+/* general body styling */
+body { 
+  margin: 0; 
+  font-family: "Calibre","Helvetica",sans-serif;
+  --color-secondary-background: #edf0f1;
+}
+
+@media only screen and (min-width: 1500px){
+  #main-content > * {
+    margin: 0 auto;
+    width: 85%;
+  }
+}
+
+/* market-page, banded styling with padded rows with alternating colors */
+section { padding: 50px; }
+section:nth-child(odd){  background: var(--color-secondary-background, gainsboro); }
+section:nth-child(even){ background: white; }
+
+/* welcome banner */ 
+.bu-banner-title-wrapper { width: 90%; max-height: 60vh !important; }
+.bu-banner-title { font-size: 2.1em; }
+.bu-banner-content h1, .bu-banner-content p { display: block; }
+.bu-banner-content ul { 
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly; 
+  text-align: center;
+  width: 60%;
+} 
+.bu-banner-content a { 
+  color: black; 
+  font-family: "VeneerClean-Reg","Helvetica",sans-serif;
+}
+.bu-banner-content a:hover { color: var(--color-accent-red-background, red); }
+
+
+/* - assorted helpers - */ 
+
+/* linked images get darker when you hover over them */ 
+section a img:hover { cursor: pointer; filter: brightness(90%); }

@@ -1,45 +1,208 @@
-<html>
-<head>
-  <!-- Polyfills only needed for Firefox and Edge. -->
-  <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.min.js"></script>
-
-  <!-- styling -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bulib/bulib-wc/assets/css/common.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bulib/bulib-wc/assets/css/footer.min.css">
-</head>
-
-<body>
-  <h1>BULib Web Components</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- metadata and SEO -->
+    <title>BU Libraries - First Year Orientation</title>
+    <meta name="description" content="BU Libraries' official website for incoming first year students.">
+    <meta name="keywords" content="bu libraries,bu library,bu orientation,orientation,first year, firstyear,incoming students">
+    <meta name="copyright" content="© 2020 Boston University">
     
-  <h2><code>bulib-header</code></h2>
-  <bulib-header></bulib-header>
+    <!-- page configuration/encoding -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/favicon.ico">
 
-  <h2><code>bulib-select</code></h2>
-  <bulib-select tag_name="bulib-footer" attr_name="curr_url"
-                curr_sel="bu.edu/library/mugar-memorial" opt_code="sample_urls">
-  </bulib-select>
+    <!-- bu orientation styling -->
+    <link rel="stylesheet" type="text/css" id="bu-banners-css" href="https://www.bu.edu/orientation2020/wp-content/plugins/bu-banners/css/bu-banners.min.css?ver=1.3.3" media="all">
+    <link rel="stylesheet" type="text/css" id="bu-branding-fonts-css" href="//cloud.typography.com/6127692/660644/css/fonts.css?ver=0.3.2">
 
-  <h2><code>bulib-libsel</code></h2>
-  <bulib-libsel prevent_action></bulib-libsel>
+    <!-- bulib-wc components and styling -->
+    <script src="https://unpkg.com/bulib-wc@latest/src/index.js?module" type="module"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulib-wc@0.1.31/dist/bundle.min.css">
 
-  <h2><code>bulib-hours</code></h2>
-  <bulib-hours library="pardee"></bulib-hours>
+    <!-- site-specific styling -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
 
-  <h2><code>bulib-search</code></h2>
-  <label>Empty (inactive)</label>
-  <bulib-search prevent_action></bulib-search>
-  <br />
+  <body>
+    <div class="header-wrapper">
+      <nav>
+        <div class="primary-navbar">
+          <div class="primary-nav-left">
+            <a title="BU Libraries Homepage" href="https://www.bu.edu/library">
+              <img id="bu-logo" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/bulib-logo.png">
+            </a>
+          </div>
+          <div class="primary-nav-main menu-items-wrapper">
+            <ul class="menu-items">
+              <li id="subsite-research"><a href="https://www.bu.edu/library/research">Research</a></li>
+              <li id="subsite-services"><a href="https://www.bu.edu/library/services">Services</a></li>
+              <li id="subsite-about"><a href="https://www.bu.edu/library/">About</a></li>
+              <!-- <li id="subsite-guides"><a href="https://library.bu.edu/guides">Guides</a></li> -->
+              <!-- <li id="subsite-help"><a href="https://askalibrarian.bu.edu/">Help</a></li> -->
+            </ul>
+          </div>
+          <div class="primary-nav-right">
+            <div class="mobile-navigation none" aria-hidden="true">
+              <div id="menuToggle">
+                <!-- invisible toggle with hamburger -->
+                <input type="checkbox" tabindex="-1">
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <!-- mobile nav menu -->
+                <ul id="mobile-menu">
+                  <li id="subsite-research"><a href="https://www.bu.edu/library/research">Research</a></li>
+                  <li id="subsite-services"><a href="https://www.bu.edu/library/services">Services</a></li>
+                  <li id="subsite-about"><a href="https://www.bu.edu/library/">About</a></li>
+                  <li><hr></li>
+                  <li><a href="https://www.bu.edu/library/about">Library Locations</a></li>
+                  <li><a href="https://askalibrarian.bu.edu/">Ask a Librarian</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="top-right">
+              <ul class="menu-items">
+                <li>
+                  <div class="dropdown">
+                    <a class="menu-item inline" href="https://www.bu.edu/library/about">
+                      <span class="prs">Library Locations</span><i class="material-icons inline">arrow_drop_down</i>
+                    </a>
+                    <div class="dropdown-content">
+                      <ul class="library-list no-bullet">
+                        <li><a href="https://www.bu.edu/library/african-studies/">African Studies Library</a></li>
+                        <li><a href="https://www.bu.edu/library/astronomy/">Astronomy Library</a></li>
+                        <!-- <li><a href="https://www.bu.edu/disc/">Digital Collections</a></li> -->
+                        <li><a href="http://archives.bu.edu/">Howard Gotlieb Archival Research Center</a></li>
+                        <li><a href="https://www.bu.edu/library/mugar-memorial/">Mugar Memorial Library</a></li>
+                        <li><a href="https://www.bu.edu/library/music/">Music Library</a></li>
+                        <!-- <li><a href="https://open.bu.edu/">OpenBU</a></li> -->
+                        <li><a href="https://www.bu.edu/library/management/">Pardee Management Library</a></li>
+                        <li><a href="https://www.bu.edu/library/pickering-educational/">Pickering Educational Resources Library</a></li>
+                        <li><a href="https://www.bu.edu/library/sel/">Science &amp; Engineering Library</a></li>
+                        <li><a href="https://www.bu.edu/library/stone-science/">Stone Science Library</a></li>
+                        <li><a href="https://www.bu.edu/library/about/additional-libraries/">Additional Libraries</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="menu-item inline" href="https://askalibrarian.bu.edu/">
+                    <span class="prm">Ask a Librarian</span><i class="material-icons inline">question_answer</i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <script id="mobile-nav-clickout" type="text/javascript">
+          let input = document.querySelector("#menuToggle > input");
+          window.addEventListener("click", function(event){
+            let clicked = event.target;
+            let clicked_within_mobile_menu = clicked.closest("#menuToggle") != null;
+            if(input && clicked != input && !clicked_within_mobile_menu || clicked.tagName == "A"){
+              input.checked = false; // uncheck the #menuToggle input, closing the mobile nav
+            }
+          });
+        </script>
+      </nav>
+    </div>
 
-  <label>Options, with Default</label>
-  <bulib-search str_options="primo industries wp" str_selected="industries" prevent_action></bulib-search>
+    <div class="banner-wrapper">
+      <div class="banner">First Year Orientation</div>
+    </div>
 
-  <h2><code>bulib-locoso</code></h2>
-  <bulib-locoso library="sel"></bulib-locoso>
+    <div class="bu-banner bu-banner-full-center bu-banner-color-light mvm">
+      <div class="bu-banner-media">
+        <picture class="bu-banner-img">
+          <!-- ToDo: fill in sourceset with other image sizes
+            <source media="(max-width: 499px)"  srcset="img/hero_library-500x667.jpg">
+            <source media="(max-width: 767px)"  srcset="img/hero_library-768x900.jpg">
+            <source media="(max-width: 991px)"  srcset="img/hero_library-992x620.jpg">
+            <source media="(max-width: 1199px)" srcset="img/hero_library-1200x675.jpg">
+            <source media="(max-width: 1499px)" srcset="img/hero_library-1680x600.jpg">
+            <source media="(min-width: 1500px)" srcset="img/hero_library-1900x600.jpg"> 
+          -->
+          <img width="1200" height="675" class="bu-banner-img" alt="Student studying between the stacks in the library" src="img/hero_library.jpg">
+        </picture>
+      </div>
 
-  <h2><code>bulib-footer</code></h2>
-  <bulib-footer></bulib-footer>
+      <div class="bu-banner-content">
+        <div class="bu-banner-title-wrapper">
+          <h1 class="bu-banner-title">Welcome, New Terriers!</h1>
+          <p class="bu-banner-subtitle">
+            Whether you're searching for online content, browsing the stacks, or you just looking for somewhere to study,
+            the BU Libraries are here to help
+          </p>
+        </div>
+        <ul class="secondary-menu no-bullet flexw">
+          <li><strong><a href="#services">Services</a></strong></li>
+          <li><strong><a href="#collections">Collections</a></strong></li>
+          <li><strong><a href="#spaces">Spaces</a></strong></li>
+        </ul>
+      </div>
+    </div>
     
-  <!-- pull in bulib-wc components -->
-  <script type="module" src="https://unpkg.com/bulib-wc@latest/src/index.js?module"></script>
-</body>
+    <div id="main-content" class="pvm">
+      <section id="video" class="paxl txtc">
+        <iframe id="kaltura_player" class="full-width" title="Kaltura Player" height="356" frameborder="0"
+          allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" 
+          sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" 
+          src="https://cdnapisec.kaltura.com/p/2159741/sp/215974100/embedIframeJs/uiconf_id/39435141/partner_id/2159741?iframeembed=true&playerId=kaltura_player&entry_id=1_5m8wj5q6&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_4r9yi8x7" 
+        ></iframe>
+      </section>
+      <section id="services">
+        <h2>Services</h2>
+        <p>
+          Get expert research help and utilize the wealth of information available to the BU Community
+          Connect with us in person, via chat, email, or text.
+        </p>
+        <a class="bulib-btn large" href="https://askalibrarian.bu.edu/">Connect With Us</a>
+      </section>
+      <section id="collections">
+        <h2>Collections</h2>
+        <p>
+          BU Libraries is your portal to millions of books and ebooks, hundreds of databases, and countless articles.
+          Connect with our resources using <a href="https://www.bu.edu/library/search">BU Libraries Search</a>.
+        </p>
+        <a href="https://www.bu.edu/library/search" class="bulib-btn large">Search Our Resources</a>
+      </section>
+      <section id="spaces">
+        <h2>Spaces</h2>
+        <h3 class="sr-only">Locations Around Campus</h3>
+        <p>We have many locations across campus and along the Charles River. Find the one closest to your dorm or your first class!</p>
+        <div>
+          <a href="img/map_simple.png">
+            <img class="full-width" src="img/map_simple.png" alt="screenshot of a map highlighting locations of various libraries around campus">
+          </a>
+        </div>
+        <p><a class="bulib-btn large" href="https://www.bu.edu/library/about/">See All Library Locations</a></p>
+      </section>
+
+      <section id="social">
+        <h2>Follow Us on Social Media</h2>
+        <p>Keep up to date with library events and updates by following us on social media</p>
+        <ul class="no-bullet">
+          <li>
+            <h3>Instagram</h3>
+            <div id="instafeed"><a target="_blank" href="https://instagram.com/bulibraries">instagram account</a></div>
+          </li>
+          <li>
+            <h3>Facebook</h3>
+            <div id="facebookfeed"><a target="_blank" href="http://facebook.com/bostonulibraries">facebook account</a></div>
+          </li>
+          <li>
+            <h3>Twitter</h3>
+            <div id="twitterfeed"><a target="_blank" href="http://twitter.com/bulibraries">twitter account</a></div>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <bulib-footer></bulib-footer>
+
+  </body>
 </html>
