@@ -23,11 +23,16 @@
 
     <!-- site-specific styling -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- load social media feeds -->
+    <script async defer lazyload="true" src="https://cdn.curator.io/published/7f33a582-9936-4db7-b17b-2e08548c5dd4.js"></script>
+    <script async defer lazyload="true" src="https://cdn.curator.io/published/193326ef-cd2f-4198-aa81-b39d1a9bf4a5.js"></script>
   </head>
 
   <body>
     <div class="header-wrapper">
       <nav>
+        <a class="sr-only" href="#main-content">skip to main content</a>
         <div class="primary-navbar">
           <div class="primary-nav-left">
             <a title="BU Libraries Homepage" href="https://www.bu.edu/library">
@@ -114,7 +119,7 @@
       <div class="banner">First Year Orientation</div>
     </div>
 
-    <div class="bu-banner bu-banner-full-center bu-banner-color-light mvm">
+    <div id="main-content" class="bu-banner bu-banner-full-center bu-banner-color-light mvm">
       <div class="bu-banner-media">
         <picture class="bu-banner-img">
           <!-- ToDo: fill in sourceset with other image sizes
@@ -125,7 +130,8 @@
             <source media="(max-width: 1499px)" srcset="img/hero_library-1680x600.jpg">
             <source media="(min-width: 1500px)" srcset="img/hero_library-1900x600.jpg"> 
           -->
-          <img width="1200" height="675" class="bu-banner-img" alt="Student studying between the stacks in the library" src="img/hero_library.jpg">
+          <img width="1200" height="675" style="min-height: 315px" class="bu-banner-img" 
+            alt="Student studying between the stacks in the library" src="img/hero_library.jpg">
         </picture>
       </div>
 
@@ -184,26 +190,32 @@
       <section id="social">
         <h2>Follow Us on Social Media</h2>
         <p>Keep up to date with library events and updates by following us on social media</p>
-        <ul class="no-bullet">
-          <li>
-            <h3>Instagram</h3>
-            <div id="instafeed"><a target="_blank" href="https://instagram.com/bulibraries">instagram account</a></div>
-          </li>
-          <li>
-            <h3>Facebook</h3>
-            <div id="facebookfeed"><a target="_blank" href="http://facebook.com/bostonulibraries">facebook account</a></div>
-            <div class="fb-like" data-share="true" data-width="450" data-show-false="true"></div>
-          </li>
-          <li>
-            <h3>Twitter</h3>
-            <div id="twitterfeed"><a target="_blank" href="http://twitter.com/bulibraries">twitter account</a></div>
-          </li>
-        </ul>
+        <div id="instagram">
+          <div class="flexw">
+            <h3>
+              <img src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-instagram-48.png"> Instagram
+            </h3>
+            &nbsp;<a href="https://instagram.com/bulibraries">&commat;bulibraries</a>
+          </div>
+          <div id="curator-feed-default-layout">
+            <em><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></em>
+          </div>
+        </div>
+        <hr class="mvl" />
+        <div id="twitter">
+          <div class="flexw">
+            <h3><img src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-twitter-48.png"> Twitter</h3>
+            &nbsp;<a href="https://twitter.com/bulibraries">&commat;bulibraries</a>
+          </div>
+          <div id="twitterfeed">
+            <div id="curator-feed-twitter-layout">
+              <em><a class="crt-logo crt-tag" href="https://curator.io" target="_blank">Powered by Curator.io</a></em>
+            </div>
+          </div>
+        </div>
       </section>
-
     </div>
 
     <bulib-footer></bulib-footer>
-
   </body>
 </html>

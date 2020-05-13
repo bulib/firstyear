@@ -22,7 +22,7 @@ body {
 }
 
 /* market-page, banded styling with padded rows with alternating colors */
-section { padding: 50px; }
+section { padding: 35px; }
 section:nth-child(odd){  background: var(--color-secondary-background, gainsboro); }
 section:nth-child(even){ background: white; }
 
@@ -48,3 +48,11 @@ section:nth-child(even){ background: white; }
 
 /* linked images get darker when you hover over them */ 
 section a img:hover { cursor: pointer; filter: brightness(90%); }
+
+/* social media icons: align, resize, hover */
+section#social div.flexw { align-items: center; }
+section#social h3 img{
+  vertical-align: middle;
+  width: 30px; 
+  height: 30px; 
+}
