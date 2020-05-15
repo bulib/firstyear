@@ -13,6 +13,7 @@ body {
   margin: 0; 
   font-family: "Benton-Sans","Helvetica",sans-serif;
   --color-secondary-background: #edf0f1;
+  min-width: 280px;
 }
 
 @media only screen and (min-width: 1500px){
@@ -28,6 +29,7 @@ section:nth-child(odd){  background: var(--color-secondary-background, gainsboro
 section:nth-child(even){ background: white; }
 
 /* welcome banner */ 
+.bu-banner-title-wrapper, .bu-banner-media, .bu-banner-content { width: 100% !important; }
 .bu-banner-title-wrapper { width: 90%; max-height: 60vh !important; }
 .bu-banner-title { font-size: 2.1em; }
 .bu-banner-content h1, .bu-banner-content p { display: block; }
@@ -46,6 +48,12 @@ section:nth-child(even){ background: white; }
 
 
 /* - assorted helpers - */ 
+
+/* welcome video width */
+#kaltura_player { width: 70%; }
+@media only screen and (max-width: 600px){ 
+  #kaltura_player { width: 100%; }
+}
 
 /* linked images get darker when you hover over them */ 
 section a img:hover { cursor: pointer; filter: brightness(90%); }
