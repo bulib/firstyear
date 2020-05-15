@@ -8,9 +8,10 @@
 }
 
 /* general body styling */
+h1 { font-family: "VeneerClean-Reg","Helvetica",sans-serif; }
 body { 
   margin: 0; 
-  font-family: "Calibre","Helvetica",sans-serif;
+  font-family: "Benton-Sans","Helvetica",sans-serif;
   --color-secondary-background: #edf0f1;
 }
 
