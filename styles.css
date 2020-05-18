@@ -60,7 +60,7 @@ section a img:hover { cursor: pointer; filter: brightness(90%); }
 
 /* social media icons: align, resize, hover */
 section#social div.flexw { align-items: center; }
-section#social h3 img{
+section#social h3 img, .sm-icon img {
   vertical-align: middle;
   width: 30px; 
   height: 30px; 
