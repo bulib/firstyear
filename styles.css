@@ -1,10 +1,4 @@
-/* fonts */
-i { 
-  font-family: "BU-Default-Icons"; 
-  margin-right: var(--padding-small, 5px);
-  text-decoration: none;
-  font-style: normal;
-}
+
 
 /* header (.primary navigation)  */
 .header-wrapper { z-index: 3; }
@@ -61,6 +55,7 @@ section:nth-child(even){ background: white; }
 #kaltura_player { width: 70%; }
 @media only screen and (max-width: 600px){ 
   #kaltura_player { width: 100%; }
+  section { padding: 15px; }
 }
 
 /* linked images get darker when you hover over them */ 
@@ -76,3 +71,11 @@ section#social h3 img, .sm-icon img {
 
 /* rounded corners on the sectondary menu */
 .secondary-menu { border-radius: var(--padding-small, 5px); }
+
+/* icons */
+i { 
+  font-family: "BU-Default-Icons"; 
+  margin-right: var(--padding-small, 5px);
+  text-decoration: none;
+  font-style: normal;
+}
