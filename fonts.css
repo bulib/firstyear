@@ -1,4 +1,24 @@
-@font-face {
+@font-face { /* headings */
+	font-family: 'ApexNew';
+	src: url("https://www.bu.edu/cdn/fonts/ApexNew/ApexNew-Bold.eot");
+	src: url("https://www.bu.edu/cdn/fonts/ApexNew/ApexNew-Bold.eot?") format("embedded-opentype"),
+	url("https://www.bu.edu/cdn/fonts/ApexNew/ApexNew-Bold.woff2") format("woff2"),
+	url("https://www.bu.edu/cdn/fonts/ApexNew/ApexNew-Bold.woff") format("woff");
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face { /* body text */
+	font-family: "Benton-Sans";
+	src: url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-2.eot");
+	src: url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-2.eot?") format("embedded-opentype"),
+	url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-3.woff") format("woff"),
+	url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-1.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face { /* welcome banner */ 
 	font-family: 'VeneerClean-Reg';
 	src: url('https://www.bu.edu/cdn/fonts/Veneer-Clean-Regular/363AA9_0_0.eot');
 	src: url('https://www.bu.edu/cdn/fonts/Veneer-Clean-Regular/363AA9_0_0.eot?#iefix') format('embedded-opentype'),
@@ -9,12 +29,13 @@
 	font-weight: 400;
 }
 
-@font-face {
-	font-family: "Benton-Sans";
-	src: url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-2.eot");
-	src: url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-2.eot?") format("embedded-opentype"),
-	url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-3.woff") format("woff"),
-	url("https://www.bu.edu/cdn/fonts/Benton-Sans-Regular/019c3a13-b3d7-4c5a-be27-07a8334a43e6-1.ttf") format("truetype");
+@font-face { /* icons (https://www.bu.edu/cdn/fonts/icons/bu-default-icons/specimen-icons.html) */
+	font-family: "BU-Default-Icons";
+	src: url("https://www.bu.edu/cdn/fonts/icons/bu-default-icons/bu-default-icons.eot");
+	src: url("https://www.bu.edu/cdn/fonts/icons/bu-default-icons/bu-default-icons.eot?#iefix") format("embedded-opentype"),
+	url("https://www.bu.edu/cdn/fonts/icons/bu-default-icons/bu-default-icons.woff") format("woff"),
+	url("https://www.bu.edu/cdn/fonts/icons/bu-default-icons/bu-default-icons.ttf") format("truetype"),
+	url("https://www.bu.edu/cdn/fonts/icons/bu-default-icons/bu-default-icons.svg#bu-default-icons") format("svg");
 	font-style: normal;
 	font-weight: 400;
 }
