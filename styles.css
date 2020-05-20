@@ -54,6 +54,12 @@ section:nth-child(even){ background: white; }
 
 /* welcome video width */
 #kaltura_player { width: 70%; }
+@media only screen and (max-width: 360px){ 
+  #profiles li { 
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 @media only screen and (max-width: 600px){ 
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
