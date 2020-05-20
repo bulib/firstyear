@@ -36,6 +36,7 @@ section:nth-child(even){ background: white; }
 .bu-banner-title { font-size: 2.1em; }
 .bu-banner-content h1, .bu-banner-content p { display: block; }
 .bu-banner-content ul { 
+  margin-top: 0px;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-evenly; 
@@ -53,9 +54,25 @@ section:nth-child(even){ background: white; }
 
 /* welcome video width */
 #kaltura_player { width: 70%; }
+@media only screen and (max-width: 360px){ 
+  #profiles li { 
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 @media only screen and (max-width: 600px){ 
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
+  #profiles { 
+    flex-wrap: wrap !important; 
+    overflow: visible;
+  }
+  #profiles li { width: 120px; }
+  #profiles li img {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 60px !important;
+  }
 }
 
 /* linked images get darker when you hover over them */ 
@@ -78,4 +95,25 @@ i {
   margin-right: var(--padding-small, 5px);
   text-decoration: none;
   font-style: normal;
+}
+
+/* - profiles - */
+#profiles {
+  padding-left: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: space-between;
+  left: 0px;
+  overflow: scroll;
+}
+#profiles li { 
+  margin: var(--padding-medium, 10px); 
+  width: 150px;
+}
+#profiles li img { 
+  border-radius: 70px; 
+  width: 140px;
+  height: 140px;
 }
