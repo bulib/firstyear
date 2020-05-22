@@ -34,6 +34,7 @@ section:nth-child(even){ background: white; }
 
 /* welcome banner */ 
 #main-content .bu-banner { width: 100% !important; }
+.bu-banner-media { max-height: 500px; }
 .bu-banner-title-wrapper { width: 90%; max-height: 60vh !important; }
 .bu-banner-title { 
   font-weight: 700;
@@ -70,12 +71,6 @@ section:nth-child(even){ background: white; }
   section { padding: 15px; }
 }
 @media only screen and (max-width: 850px){ 
-  section#spaces > div { 
-    display: inline-block !important;
-  }
-  section#spaces > div > div {
-    display: inline-block;
-  }
   
 }
 @media only screen and (min-width: 1500px){
@@ -107,23 +102,33 @@ i {
   font-style: normal;
 }
 
-/* - spaces - */
-section#spaces > div {
-  display: flex; 
-  /* flex: 1 1 auto; */
+/* - services, collections, and spaces sections - */
+section div.info {
+  margin-top: auto; 
+  margin-bottom: auto;
+  max-width: 500px;
+  padding-bottom: var(--padding-large, 30px);
+}
+section#spaces, section#collections, section#services {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+div.masonry { overflow: scroll; }
 div.masonry > div { 
   display: flex; 
-  column-count: 3;
-  column-gap: 10;
+  max-width: 100%;
+  height: auto;
   overflow: scroll;
   margin-bottom: var(--padding-large, 15px); 
+  justify-content: space-between flex-end;
 }
-div.masonry div:nth-child(odd){ justify-content: flex-end; }
-div.masonry div:nth-child(even){ justify-content: space-between; }
-section#spaces div.masonry img { 
+div.masonry img { 
   max-height: 20vh; 
 }
 
+.left { justify-content: flex-start !important; }
+.right { justify-content: flex-end !important; }
+
+section#collections { flex-wrap: wrap-reverse; }
