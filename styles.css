@@ -27,13 +27,6 @@ body {
   margin: 0; 
 }
 
-@media only screen and (min-width: 1500px){
-  #main-content > * {
-    margin: 0 auto;
-    width: 85%;
-  }
-}
-
 /* market-page, banded styling with padded rows with alternating colors */
 section { padding: 35px; }
 section:nth-child(odd){  background: var(--color-secondary-background, gainsboro); }
@@ -70,24 +63,25 @@ section:nth-child(even){ background: white; }
 
 /* welcome video width */
 #kaltura_player { width: 70%; }
-@media only screen and (max-width: 360px){ 
-  #profiles li { 
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
+
+/* responsiveness */
 @media only screen and (max-width: 600px){ 
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
-  #profiles { 
-    flex-wrap: wrap !important; 
-    overflow: visible;
+}
+@media only screen and (max-width: 850px){ 
+  section#spaces > div { 
+    display: inline-block !important;
   }
-  #profiles li { width: 120px; }
-  #profiles li img {
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 60px !important;
+  section#spaces > div > div {
+    display: inline-block;
+  }
+  
+}
+@media only screen and (min-width: 1500px){
+  #main-content > * {
+    margin: 0 auto;
+    width: 85%;
   }
 }
 
@@ -113,23 +107,23 @@ i {
   font-style: normal;
 }
 
-/* - profiles - */
-#profiles {
-  padding-left: 0px;
-  list-style-type: none;
-  display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
+/* - spaces - */
+section#spaces > div {
+  display: flex; 
+  /* flex: 1 1 auto; */
+  flex-wrap: wrap;
   justify-content: space-between;
-  left: 0px;
+}
+div.masonry > div { 
+  display: flex; 
+  column-count: 3;
+  column-gap: 10;
   overflow: scroll;
+  margin-bottom: var(--padding-large, 15px); 
 }
-#profiles li { 
-  margin: var(--padding-medium, 10px); 
-  width: 150px;
+div.masonry div:nth-child(odd){ justify-content: flex-end; }
+div.masonry div:nth-child(even){ justify-content: space-between; }
+section#spaces div.masonry img { 
+  max-height: 20vh; 
 }
-#profiles li img { 
-  border-radius: 70px; 
-  width: 140px;
-  height: 140px;
-}
+
