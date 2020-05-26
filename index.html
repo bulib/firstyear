@@ -28,8 +28,15 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./fonts.css">
 
-    <!-- load social media feeds -->
+    <!-- external scripts and additional functionality -->
     <script async defer lazyload="true" src="https://cdn.curator.io/published/7f33a582-9936-4db7-b17b-2e08548c5dd4.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5204430-10"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-5204430-10');
+    </script>
   </head>
 
   <body>
@@ -255,5 +262,30 @@
     </div>
 
     <bulib-footer></bulib-footer>
+
+    <script id="ga-click-events" type="module">
+      import {addSendGAEventOnAnchorClickToAnchorElements} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
+      
+      window.onload = function(){
+        let headerLinks = document.querySelectorAll(".primary-navbar a");
+        addSendGAEventOnAnchorClickToAnchorElements(headerLinks, "homepage-link", "header");  
+        let bannerLinks = document.querySelectorAll(".bu-banner-content ul.secondary-menu a");
+        addSendGAEventOnAnchorClickToAnchorElements(pageAnchorScrollLinks, "hompeage-link", "banner-link");
+        
+        let servicesLinks = document.querySelectorAll("#services a");
+        addSendGAEventOnAnchorClickToAnchorElements(servicesLinks, "homepage-link", "services");
+        let collectionsLinks = document.querySelectorAll("#collections a");
+        addSendGAEventOnAnchorClickToAnchorElements(servicesLinks, "homepage-link", "collections");
+        let spacesLinks = document.querySelectorAll("#spaces a");
+        addSendGAEventOnAnchorClickToAnchorElements(spacesLinks, "homepage-link", "spaces"); 
+        let locationsLinks = document.querySelectorAll("#locations a");
+        addSendGAEventOnAnchorClickToAnchorElements(locationsLinks, "homepage-link", "locations"); 
+        let socialLinks = document.querySelectorAll("#social a");
+        addSendGAEventOnAnchorClickToAnchorElements(socialLinks, "homepage-link", "social"); 
+        
+        let footerLinks = document.querySelectorAll("bulib-footer");
+        addSendGAEventOnAnchorClickToAnchorElements(socialLinks, "homepage-link", "footer"); 
+      }
+    </script>
   </body>
 </html>
