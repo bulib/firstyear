@@ -36,9 +36,9 @@ section:nth-child(even){ background: white; }
 #main-content .bu-banner { width: 100% !important; }
 .bu-banner-media { max-height: 500px; }
 .bu-banner-title-wrapper { width: 90%; max-height: 60vh !important; }
-.bu-banner-title { 
+h1.bu-banner-title { 
   font-weight: 700;
-  font-size: 2.1em; 
+  font-size: 6vw;
   text-transform: uppercase;
   color:  #ffffff;
   text-shadow: 0 2px 7px rgba(0,0,0,0.3);
@@ -70,6 +70,11 @@ section:nth-child(even){ background: white; }
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
   ul#locations-list { column-count: 1; }
+  h1.bu-banner-title { font-size: 1.8em !important; }
+}
+
+@media only screen and (min-width: 850px){
+  h1.bu-banner-title { font-size: 4.5vw !important; }
 }
 @media only screen and (min-width: 1500px){
   #main-content > * {
@@ -82,6 +87,7 @@ section:nth-child(even){ background: white; }
   }
   ul#locations-list { column-count: 3; }
 }
+strong, .bold { font-weight: bold !important;}
 
 /* linked images get darker when you hover over them */ 
 section a img:hover { cursor: pointer; filter: brightness(90%); }
