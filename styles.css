@@ -44,7 +44,11 @@ section:nth-child(even){ background: white; }
   text-shadow: 0 2px 7px rgba(0,0,0,0.3);
 }
 .bu-banner-content h1, .bu-banner-content p { display: block; }
-.bu-banner-content a { font-size: 1.2em; }
+.bu-banner-content .secondary-menu a { 
+  font-size: 1.2em; 
+  color: black; 
+  font-family: "VeneerClean-Reg","Helvetica",sans-serif;
+}
 .bu-banner-content ul { 
   border-radius: var(--padding-small, 5px);
   padding: var(--padding-medium, 10px);
@@ -53,10 +57,6 @@ section:nth-child(even){ background: white; }
   text-align: center;
   width: 60%;
 } 
-.bu-banner-content a { 
-  color: black; 
-  font-family: "VeneerClean-Reg","Helvetica",sans-serif;
-}
 .bu-banner-content a:hover { color: var(--color-accent-red-background, red); }
 
 
@@ -69,6 +69,7 @@ section:nth-child(even){ background: white; }
 @media only screen and (max-width: 600px){ 
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
+  ul#locations-list { column-count: 1; }
 }
 @media only screen and (min-width: 1500px){
   #main-content > * {
@@ -79,6 +80,7 @@ section:nth-child(even){ background: white; }
     margin-left: auto; 
     margin-right: auto;
   }
+  ul#locations-list { column-count: 3; }
 }
 
 /* linked images get darker when you hover over them */ 
@@ -129,7 +131,19 @@ div.masonry img {
   max-height: 20vh; 
 }
 
+
 .left { justify-content: flex-start !important; }
 .right { justify-content: flex-end !important; }
 
 section#collections { flex-wrap: wrap-reverse; }
+
+ul#locations-list { 
+  max-width: 1356px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+ul#locations-list > li { 
+  display: flex; 
+  flex-wrap: wrap; 
+  padding-bottom: 10px;
+}
