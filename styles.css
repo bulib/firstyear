@@ -70,13 +70,14 @@ section:nth-child(even){ background: white; }
   #kaltura_player { width: 100%; }
   section { padding: 15px; }
 }
-@media only screen and (max-width: 850px){ 
-  
-}
 @media only screen and (min-width: 1500px){
   #main-content > * {
     margin: 0 auto;
     width: 85%;
+  }
+  div.info {
+    margin-left: auto; 
+    margin-right: auto;
   }
 }
 
@@ -107,7 +108,7 @@ section div.info {
   margin-top: auto; 
   margin-bottom: auto;
   max-width: 500px;
-  padding-bottom: var(--padding-large, 30px);
+  padding-bottom: 50px;
 }
 section#spaces, section#collections, section#services {
   display: flex;
