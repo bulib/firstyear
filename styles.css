@@ -71,6 +71,7 @@ h1.bu-banner-title {
   section { padding: 15px; }
   ul#locations-list { column-count: 1; }
   h1.bu-banner-title { font-size: 1.8em !important; }
+  div.singleton img { max-width: 100% !important; }
 }
 
 @media only screen and (min-width: 850px){
@@ -124,6 +125,8 @@ section#spaces, section#collections, section#services {
   justify-content: space-between;
 }
 
+#collections .singleton img { max-width: 615px; }
+div.singleton { margin: auto; }
 div.masonry { overflow: scroll; }
 div.masonry > div { 
   display: flex; 
@@ -134,9 +137,8 @@ div.masonry > div {
   justify-content: space-between flex-end;
 }
 div.masonry img { 
-  max-height: 20vh; 
+  max-height: 18vh; 
 }
-
 
 .left { justify-content: flex-start !important; }
 .right { justify-content: flex-end !important; }
