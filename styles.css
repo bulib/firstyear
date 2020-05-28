@@ -63,11 +63,11 @@ h1.bu-banner-title {
 /* - assorted helpers - */ 
 
 /* welcome video width */
-#kaltura_player { width: 70%; }
+#kaltura_player { width: 65%; }
 
 /* responsiveness */
 @media only screen and (max-width: 600px){ 
-  #kaltura_player { width: 100%; }
+  #kaltura_player { width: 100%; height: 300px; }
   section { padding: 15px; }
   ul#locations-list { column-count: 1; }
   h1.bu-banner-title { font-size: 1.8em !important; }
@@ -76,8 +76,11 @@ h1.bu-banner-title {
 
 @media only screen and (min-width: 850px){
   h1.bu-banner-title { font-size: 4.5vw !important; }
+  #kaltura_player { height: 350px; }
 }
 @media only screen and (min-width: 1500px){
+  
+  #kaltura_player { height: 500px; }
   #main-content > * {
     margin: 0 auto;
     width: 85%;
