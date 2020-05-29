@@ -261,7 +261,6 @@
           <li>
             <img class="mrn txtv" height="24px" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-twitter-48.png">
             <strong>twitter</strong>: <a href="https://twitter.com/bulibraries">&commat;bulibraries</a>
-            <hr />
           </li>
           <li>
             <img class="mrn txtv" height="24px" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-instagram-48.png">
@@ -297,8 +296,22 @@
         addSendGAEventOnAnchorClickToAnchorElements(socialLinks, "homepage-link", "social"); 
         
         let footerLinks = document.querySelectorAll("bulib-footer");
-        addSendGAEventOnAnchorClickToAnchorElements(footerLinks, "homepage-link", "footer"); 
+        addSendGAEventOnAnchorClickToAnchorElements(footerLinks, "homepage-link", "bulib-footer"); 
       }
+    </script>
+    <script id="ga-event-instagram-loaded" type="module">
+      import {sendGAEvent} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
+      
+      let didInstagramFeedLoad = function(){
+        return document.querySelectorAll("div.crt-feed div.crt-post-content").length > 0;
+      }
+
+      setTimeout( function(){
+        let category = "item-loaded"; let action = "#curator-feed-default-layout";
+        let label = didInstagramFeedLoad()? "feed-loaded" : "failed-to-load";
+        console.log(category, action, label)
+        sendGAEvent(category, action, label);
+      }, 1000*5);
     </script>
   </body>
 </html>
