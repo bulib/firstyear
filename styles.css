@@ -116,8 +116,7 @@ i {
 
 /* - services, collections, and spaces sections - */
 section div.info {
-  margin-top: auto; 
-  margin-bottom: auto;
+  margin: auto;
   max-width: 500px;
   padding-bottom: 50px;
 }
@@ -157,3 +156,5 @@ ul#locations-list > li {
   flex-wrap: wrap; 
   padding-bottom: 10px;
 }
+
+#services img { height: 275px; }
