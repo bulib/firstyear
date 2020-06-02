@@ -16,7 +16,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/favicon.ico">
     
     <!-- bulib-wc components and styling -->
-    <script src="./bulib-header.js" type="module"></script>
     <script src="https://unpkg.com/bulib-wc@latest/src/index.js?module" type="module" async defer></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulib-wc@0.1.31/dist/bundle.min.css">
     <link rel="stylesheet" type="text/css" id="bu-banners-css" media="all"
@@ -25,19 +24,106 @@
     <!-- site-specific styling -->
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./fonts.css">
+
+    <!-- external scripts and additional functionality -->
+    <script async defer lazyload="true" src="https://cdn.curator.io/published/7f33a582-9936-4db7-b17b-2e08548c5dd4.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5204430-10"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-5204430-10');
+    </script>
   </head>
 
   <body>
-    <bulib-header></bulib-header>
+    <div class="header-wrapper">
+      <nav>
+        <a class="sr-only" href="#main-content">skip to main content</a>
+        <div class="primary-navbar">
+          <div class="primary-nav-left">
+            <a title="BU Libraries Homepage" href="https://www.bu.edu/library">
+              <img id="bu-logo" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/bulib-logo.png">
+            </a>
+          </div>
+          <div class="primary-nav-main menu-items-wrapper">
+            <ul class="menu-items">
+              <li id="subsite-research"><a href="https://www.bu.edu/library/research">Research</a></li>
+              <li id="subsite-services"><a href="https://www.bu.edu/library/services">Services</a></li>
+              <li id="subsite-about"><a href="https://www.bu.edu/library/">About</a></li>
+              <!-- <li id="subsite-guides"><a href="https://library.bu.edu/guides">Guides</a></li> -->
+              <!-- <li id="subsite-help"><a href="https://askalibrarian.bu.edu/">Help</a></li> -->
+            </ul>
+          </div>
+          <div class="primary-nav-right">
+            <div class="mobile-navigation none" aria-hidden="true">
+              <div id="menuToggle">
+                <!-- invisible toggle with hamburger -->
+                <input type="checkbox" tabindex="-1">
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <!-- mobile nav menu -->
+                <ul id="mobile-menu">
+                  <li id="subsite-research"><a href="https://www.bu.edu/library/research">Research</a></li>
+                  <li id="subsite-services"><a href="https://www.bu.edu/library/services">Services</a></li>
+                  <li id="subsite-about"><a href="https://www.bu.edu/library/">About</a></li>
+                  <li><hr></li>
+                  <li><a href="https://www.bu.edu/library/about">Library Locations</a></li>
+                  <li><a href="https://askalibrarian.bu.edu/">Ask a Librarian</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="top-right">
+              <ul class="menu-items">
+                <li>
+                  <div class="dropdown">
+                    <a class="menu-item inline" href="https://www.bu.edu/library/about">
+                      <span class="prs">Library Locations</span><i class="material-icons inline">arrow_drop_down</i>
+                    </a>
+                    <div class="dropdown-content">
+                      <ul class="library-list no-bullet">
+                        <li><a href="https://www.bu.edu/library/african-studies/">African Studies Library</a></li>
+                        <li><a href="https://www.bu.edu/library/astronomy/">Astronomy Library</a></li>
+                        <!-- <li><a href="https://www.bu.edu/disc/">Digital Collections</a></li> -->
+                        <li><a href="http://archives.bu.edu/">Howard Gotlieb Archival Research Center</a></li>
+                        <li><a href="https://www.bu.edu/library/mugar-memorial/">Mugar Memorial Library</a></li>
+                        <li><a href="https://www.bu.edu/library/music/">Music Library</a></li>
+                        <!-- <li><a href="https://open.bu.edu/">OpenBU</a></li> -->
+                        <li><a href="https://www.bu.edu/library/management/">Pardee Management Library</a></li>
+                        <li><a href="https://www.bu.edu/library/pickering-educational/">Pickering Educational Resources Library</a></li>
+                        <li><a href="https://www.bu.edu/library/sel/">Science &amp; Engineering Library</a></li>
+                        <li><a href="https://www.bu.edu/library/stone-science/">Stone Science Library</a></li>
+                        <li><a href="https://www.bu.edu/library/about/additional-libraries/">Additional Libraries</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="menu-item inline" href="https://askalibrarian.bu.edu/">
+                    <span class="prm">Ask a Librarian</span><i class="material-icons inline">question_answer</i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <script id="mobile-nav-clickout" type="text/javascript">
+          let input = document.querySelector("#menuToggle > input");
+          window.addEventListener("click", function(event){
+            let clicked = event.target;
+            let clicked_within_mobile_menu = clicked.closest("#menuToggle") != null;
+            if(input && clicked != input && !clicked_within_mobile_menu || clicked.tagName == "A"){
+              input.checked = false; // uncheck the #menuToggle input, closing the mobile nav
+            }
+          });
+        </script>
+      </nav>
+    </div>
 
     <div class="banner-wrapper">
-      <div class="banner">
-        <span><a href="/">Welcome</a></span>
-        <ul class="inline-list secondary-menu">
-          <li><a href="/collections.html">collections</a></li>
-          <li><a href="/">spaces</a></li>
-        </ul>
-      </div>
+      <div class="banner">First Year Orientation</div>
     </div>
 
     <div id="main-content">
@@ -54,41 +140,179 @@
 
         <div class="bu-banner-content">
           <div class="bu-banner-title-wrapper">
-            <bulib-search str_options="primo wp guides help">
-              <form action="http://library.bu.edu/srch.php" method="get">
-                <input name="q" type="text" /><button type="submit">Search</button>
-              </form>
-            </bulib-search>
-            <br />
+            <h1 class="bu-banner-title">Welcome, New Terriers!</h1>
             <p class="bu-banner-subtitle">
               Whether you're <strong>searching</strong> for online content, <strong>browsing</strong> the stacks, or you just looking for somewhere to <strong>study</strong>, 
               the BU Libraries are <strong class="big-text"><a href="https://askalibrarian.bu.edu" class="white-link bold">here to help</a></strong>
             </p>
           </div>
+          <ul class="secondary-menu no-bullet flexw">
+            <li><a href="#services"><i>👥</i>Services</a></li>
+            <li><a href="#collections" class="mhs"><i>📕</i>Collections</a></li>
+            <li><a href="#spaces"><i></i>Spaces</a></li>
+          </ul>
         </div>
       </div>
 
+      <section id="video" class="paxl txtc">
+        <iframe id="kaltura_player" title="Kaltura Player" height="450" frameborder="0" 
+          allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" 
+          sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" 
+          src="https://cdnapisec.kaltura.com/p/2159741/sp/215974100/embedIframeJs/uiconf_id/39435141/partner_id/2159741?iframeembed=true&playerId=kaltura_player&entry_id=1_a07l9gb3&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_4r9yi8x7" 
+        ></iframe>
+      </section>
+
       <section id="services">
-        <h2>Services</h2>
+        <div class="info">
+          <h2>Services</h2>
+          <p>
+            Get <strong>expert research help</strong> and utilize the wealth of information available to the BU Community.
+            Connect with us in person, via chat, email, or text.
+          </p>
+          <a class="bulib-btn large" href="https://askalibrarian.bu.edu/">Connect With Us</a>
+        </div>
+        <div class="singleton">
+          <a href="https://www.bu.edu/library/services/reference/">
+            <img alt="one of our reference librarians assists a student with a information request" src="img/service-laptop.png">
+          </a>
+        </div>
       </section>
 
       <section id="collections">
-        <h2>Collections</h2>
+        <div class="singleton">
+          <a href="https://www.bu.edu/library/research/collections/">
+            <img alt="a student sits between the stacks doing " src="img/collections-mugar.jpg">
+          </a>
+        </div>
+        <div class="info">
+          <h2>Collections</h2>
+          <p>
+            BU Libraries is your portal to millions of <strong>books and ebooks</strong>, hundreds of <strong>databases</strong>, 
+            and countless <strong>articles</strong>. Connect with our resources using <a href="https://www.bu.edu/library/search">BU Libraries Search</a>.
+          </p>
+          <a href="https://www.bu.edu/library/search" class="bulib-btn large">Search Our Resources</a>
+        </div>
       </section>
 
       <section id="spaces">
-        <h2>Spaces</h2>
+        <div class="info">
+          <h2>Spaces</h2>
+          <p>Between the stacks and exhibitions we have many places to <strong>meet</strong>, <strong>study</strong>, <strong>read</strong>, or anything in between.</p>
+          <p><a class="bulib-btn large" href="https://www.bu.edu/library/about/study-spaces/">See Study Rooms and Spaces</a></p>
+        </div>
+        <div class="singleton">
+          <a href="https://www.bu.edu/library/about/study-spaces/">
+            <img alt="a student reviews her notes on one of the long tables in the mugar building" src="img/spaces_mugar-study.jpg">
+          </a>
+        </div>
       </section>
 
       <section id="locations">
         <h2>Locations</h2>
+        <p>We have <strong>many locations</strong> across campus and along the Charles River. Find the one closest to your dorm or your first class!</p>
+        <p><a class="bulib-btn large" href="https://www.bu.edu/library/about/">See All Library Locations</a></p>
+        <a href="img/map_simple.png">
+          <img class="full-width" src="img/map_simple.png" alt="screenshot of a map highlighting locations of various libraries around campus">
+        </a>
+        <ul id="locations-list" class="multi-column secondary-menu">
+          <li>
+            <strong>Mugar Memorial Building</strong>&nbsp;-&nbsp;
+            <address><a href="https://maps.bu.edu/?id=647#!m/288889?ce/29645">771 Commonwealth Ave</a></address>
+
+            <ul class="pbs mrm">
+              <li><a href="https://www.bu.edu/library/african-studies/">African Studies Library</a> (Sixth Floor)</li>
+              <li><a href="http://archives.bu.edu/">Howard Gotlieb Archival Research Center</a> (Fifth Floor)</li>
+              <li><a href="http://www.bu.edu/library/mugar-memorial/research/krasker-filmvideo/">Krasker Film Library</a> (Basement)</li>
+              <li><a href="https://www.bu.edu/library/mugar-memorial/">Mugar Memorial Library</a></li>
+              <li><a href="https://www.bu.edu/library/music/">Music Library</a> (Second Floor)</li>
+            </ul>
+          </li>
+          <li class="pts">
+            <strong><a href="http://www.bu.edu/library/astronomy/">Astronomy Library</a></strong>&nbsp;-&nbsp;
+            <address><a href="https://maps.bu.edu/?id=647#!m/288862?ce/29645">725 Commonwealth Ave</a></address>
+          </li>
+          <li>
+            <strong><a href="https://www.bu.edu/library/stone-science/">Stone Science Library</a></strong>
+            &nbsp;-&nbsp;
+            <address><a href="https://maps.bu.edu/?id=647#!m/288872?ce/29645">675 Commonwealth Ave</a> (STO)</address>
+          </li>
+          <li>
+            <strong><a href="https://www.bu.edu/library/sel/">Science and Engineering Library</a></strong>&nbsp;-&nbsp;
+            <address><a href="https://maps.bu.edu/?id=647#!m/288871?ce/29645">38 Cummington Mall</a> (SLB)</address>
+          </li>
+          <li>
+            <strong><a href="https://www.bu.edu/library/pickering-educational/">Pickering Educational Resources Library</a></strong>&nbsp;-&nbsp;
+            <address><a href="https://maps.bu.edu/?id=647#!m/288870?ce/29645">2 Silber Way</a> (WED)</address>
+          </li>
+          <li>
+            <strong><a href="https://www.bu.edu/library/management">Pardee Management Library</a></strong>&nbsp;-&nbsp;
+            <address> <a href="https://maps.bu.edu/?id=647#!m/288868?ce/29645">595 Commonwealth Ave</a></address>
+          </li>
+        </ul>
       </section>
 
       <section id="social">
         <h2>Follow Us</h2>
+        <p>Learn more and <strong>connect with us</strong> on social all summer long</p>
+        <ul class="no-bullet">
+          <li class="txtv">
+            <img class="mrn txtv" height="24px" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-facebook-48.png">
+            <strong>facebook</strong>: <a href="http://facebook.com/bostonulibraries">&commat;bostonulibraries</a>
+          </li>
+          <li>
+            <img class="mrn txtv" height="24px" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-twitter-48.png">
+            <strong>twitter</strong>: <a href="https://twitter.com/bulibraries">&commat;bulibraries</a>
+          </li>
+          <li>
+            <img class="mrn txtv" height="24px" src="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/icons8-instagram-48.png">
+            <strong>instagram</strong>: <a href="https://instagram.com/bulibraries">&commat;bulibraries</a>
+          </li>
+        </ul>
+        <div id="curator-feed-default-layout">
+          <em><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></em>
+        </div>
       </section>
     </div>
 
     <bulib-footer></bulib-footer>
+
+    <script id="ga-click-events" type="module">
+      import {addSendGAEventOnAnchorClickToAnchorElements} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
+      
+      window.onload = function(){
+        let headerLinks = document.querySelectorAll(".primary-navbar a");
+        addSendGAEventOnAnchorClickToAnchorElements(headerLinks, "homepage-link", "header");  
+        let bannerLinks = document.querySelectorAll(".bu-banner-content ul.secondary-menu a");
+        addSendGAEventOnAnchorClickToAnchorElements(bannerLinks, "hompeage-link", "banner-link");
+        
+        let servicesLinks = document.querySelectorAll("#services a");
+        addSendGAEventOnAnchorClickToAnchorElements(servicesLinks, "homepage-link", "services");
+        let collectionsLinks = document.querySelectorAll("#collections a");
+        addSendGAEventOnAnchorClickToAnchorElements(collectionsLinks, "homepage-link", "collections");
+        let spacesLinks = document.querySelectorAll("#spaces a");
+        addSendGAEventOnAnchorClickToAnchorElements(spacesLinks, "homepage-link", "spaces"); 
+        let locationsLinks = document.querySelectorAll("#locations a");
+        addSendGAEventOnAnchorClickToAnchorElements(locationsLinks, "homepage-link", "locations"); 
+        let socialLinks = document.querySelectorAll("#social a");
+        addSendGAEventOnAnchorClickToAnchorElements(socialLinks, "homepage-link", "social"); 
+        
+        let footerLinks = document.querySelectorAll("bulib-footer");
+        addSendGAEventOnAnchorClickToAnchorElements(footerLinks, "homepage-link", "bulib-footer"); 
+      }
+    </script>
+    <script id="ga-event-instagram-loaded" type="module">
+      import {sendGAEvent} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
+      
+      let didInstagramFeedLoad = function(){
+        return document.querySelectorAll("div.crt-feed div.crt-post-content").length > 0;
+      }
+
+      setTimeout( function(){
+        let category = "item-loaded"; let action = "#curator-feed-default-layout";
+        let label = didInstagramFeedLoad()? "feed-loaded" : "failed-to-load";
+        console.log(category, action, label)
+        sendGAEvent(category, action, label);
+      }, 1000*5);
+    </script>
   </body>
 </html>

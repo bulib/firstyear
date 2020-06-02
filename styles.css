@@ -1,7 +1,9 @@
+
+
 /* header (.primary navigation)  */
-bulib-header { z-index: 3;}
+.header-wrapper { z-index: 3; }
 .banner-wrapper { box-shadow: none;}
-bulib-header, #mobile-menu, .bu-banner-content { 
+#mobile-menu, .bu-banner-content { 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
@@ -11,12 +13,17 @@ bulib-header, #mobile-menu, .bu-banner-content {
 h1 { font-family: "ApexNew", "Helvetica", sans-serif; }
 h2 {
   font-family: "VeneerClean-Reg", "Helvetica", sans-serif;
-  text-transform: uppercase;
+  color: #CC0000;
+  font-size: 3em;
+  text-transform:uppercase;
   font-weight: 700;
 }
 p { font-size: 1.1em; }
 body { 
   font-family: "Benton-Sans","Helvetica",sans-serif;
+  --color-secondary-background: #edf0f1;
+  --color-button-background-dark: #134f5c;
+  min-width: 280px;
   margin: 0; 
 }
 
@@ -52,18 +59,35 @@ h1.bu-banner-title {
 } 
 .bu-banner-content a:hover { color: var(--color-accent-red-background, red); }
 
+
+/* - assorted helpers - */ 
+
+/* welcome video width */
+#kaltura_player { width: 65%; }
+
 /* responsiveness */
 @media only screen and (max-width: 600px){ 
+  #kaltura_player { width: 100%; height: 300px; }
   section { padding: 15px; }
+  ul#locations-list { column-count: 1; }
   h1.bu-banner-title { font-size: 1.8em !important; }
+  div.singleton img { max-width: 100% !important; }
 }
+
 @media only screen and (min-width: 850px){
   h1.bu-banner-title { font-size: 4.5vw !important; }
+  #kaltura_player { height: 350px; }
 }
 @media only screen and (min-width: 1500px){
+  
+  #kaltura_player { height: 500px; }
   #main-content > * {
     margin: 0 auto;
     width: 85%;
+  }
+  div.info {
+    margin-left: auto; 
+    margin-right: auto;
   }
 }
 strong, .bold { font-weight: bold !important;}
@@ -71,8 +95,66 @@ strong, .bold { font-weight: bold !important;}
 /* linked images get darker when you hover over them */ 
 section a img:hover { cursor: pointer; filter: brightness(90%); }
 
+/* social media icons: align, resize, hover */
+section#social div.flexw { align-items: center; }
+section#social h3 img, .sm-icon img {
+  vertical-align: middle;
+  width: 30px; 
+  height: 30px; 
+}
+
 /* rounded corners on the sectondary menu */
 .secondary-menu { border-radius: var(--padding-small, 5px); }
 
+/* icons */
+i { 
+  font-family: "BU-Default-Icons"; 
+  margin-right: var(--padding-small, 5px);
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* - services, collections, and spaces sections - */
+section div.info {
+  margin: auto;
+  max-width: 500px;
+  padding-bottom: 50px;
+}
+section#spaces, section#collections, section#services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#collections .singleton img { max-width: 615px; }
+div.singleton { margin: auto; }
+div.masonry { overflow: scroll; }
+div.masonry > div { 
+  display: flex; 
+  max-width: 100%;
+  height: auto;
+  overflow: scroll;
+  margin-bottom: var(--padding-large, 15px); 
+  justify-content: space-between flex-end;
+}
+div.masonry img { 
+  max-height: 18vh; 
+}
+
 .left { justify-content: flex-start !important; }
 .right { justify-content: flex-end !important; }
+
+section#collections { flex-wrap: wrap-reverse; }
+
+ul#locations-list { 
+  max-width: 1356px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+ul#locations-list > li { 
+  display: flex; 
+  flex-wrap: wrap; 
+  padding-bottom: 10px;
+}
+
+#services img { height: 275px; }
