@@ -2,22 +2,21 @@
 <html lang="en">
   <head>
     <!-- metadata and SEO -->
-    <title>BU Libraries - First Year Orientation</title>
-    <meta name="description" content="Whether you're searching for online content, browsing the stacks, or you just looking for somewhere to study, BU Libraries is here to help. Come learn about the many services, spaces, and collections we offer to BU students.">
-    <meta name="keywords" content="bu libraries,bu library,bu orientation,orientation,first year,firstyear,incoming students">
+    <title>BU Libraries Home</title>
+    <meta name="description" content="Whether you're searching for online content, browsing the stacks, or you just looking for somewhere to study, BU Libraries is here to help.">
+    <meta name="keywords" content="bu libraries,bu library">
     <meta property="og:image" content="img/preview.png">
     <meta property="og:image:secure" content="img/preview.png">
     <meta name="copyright" content="© 2020 Boston University">
     
     <!-- page configuration/encoding -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/favicon.ico">
     
     <!-- bulib-wc components and styling -->
-    <script src="./bulib-header.js" type="module"></script>
     <script src="https://unpkg.com/bulib-wc@latest/src/index.js?module" type="module" async defer></script>
+    <script src="./bulib-header.js" type="module" async defer></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulib-wc@0.1.31/dist/bundle.min.css">
     <link rel="stylesheet" type="text/css" id="bu-banners-css" media="all"
       href="https://www.bu.edu/orientation2020/wp-content/plugins/bu-banners/css/bu-banners.min.css?ver=1.3.3">
@@ -29,16 +28,18 @@
 
   <body>
     <bulib-header></bulib-header>
-
+    
     <div class="banner-wrapper">
       <div class="banner">
-        <span><a href="/">Welcome</a></span>
+        <span>
+          <a href="/">Home</a>&nbsp;&nbsp;<a href="/collections.html">Collections</a>
+        </span>
         <ul class="inline-list secondary-menu">
           <li><a href="/collections.html">collections</a></li>
           <li><a href="/">spaces</a></li>
         </ul>
       </div>
-    </div>
+    </div> 
 
     <div id="main-content">
 
@@ -54,38 +55,25 @@
 
         <div class="bu-banner-content">
           <div class="bu-banner-title-wrapper">
-            <bulib-search str_options="primo wp guides help">
+            <bulib-search str_options="openbu hgar db industries">
               <form action="http://library.bu.edu/srch.php" method="get">
                 <input name="q" type="text" /><button type="submit">Search</button>
               </form>
             </bulib-search>
-            <br />
-            <p class="bu-banner-subtitle">
-              Whether you're <strong>searching</strong> for online content, <strong>browsing</strong> the stacks, or you just looking for somewhere to <strong>study</strong>, 
-              the BU Libraries are <strong class="big-text"><a href="https://askalibrarian.bu.edu" class="white-link bold">here to help</a></strong>
-            </p>
           </div>
         </div>
       </div>
 
-      <section id="services">
-        <h2>Services</h2>
+      <section id="openbu">
+        <h2>OpenBU</h2>
       </section>
 
-      <section id="collections">
-        <h2>Collections</h2>
+      <section id="archives">
+        <h2>Howard Gotlieb Archival Research Center</h2>
       </section>
 
-      <section id="spaces">
-        <h2>Spaces</h2>
-      </section>
-
-      <section id="locations">
-        <h2>Locations</h2>
-      </section>
-
-      <section id="social">
-        <h2>Follow Us</h2>
+      <section id="databases">
+        <h2>Databases List</h2>
       </section>
     </div>
 
