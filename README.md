@@ -5,7 +5,7 @@ Welcome and orientation site for the BU libraries, made especially for first yea
 ## Usage
 
 - This is a **static website** that runs (almost entirely) off of vanilla js/css.
-- It pulls in assets from IS&T (fonts, banner styling) and from our [Web Components repo](https://github.com/)
+- It pulls in assets from IS&T (fonts, banner styling) and from our [Web Components repo](https://github.com/bulib/bulib-wc)
 - It also relies on curator.io to pull in our instagram feed. that's currently done through
   Aidan Sawyer's account (aidans@bu.edu).
 
