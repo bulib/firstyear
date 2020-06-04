@@ -6,7 +6,7 @@ set -e
 # prepare sftp command
 user=aidans
 server=webdev.bu.edu
-dev_path=/Users/aidans/projects/bulib.github.io
+dev_path=/Users/aidans/projects/firstyear
 prod_path=/web/l/i/library/firstyear/
 
 # run the sftp commands
