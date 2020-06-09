@@ -7,6 +7,7 @@
     <meta name="keywords" content="bu libraries,bu library,bu orientation,orientation,first year,firstyear,incoming students">
     <meta property="og:image" content="img/preview.png">
     <meta property="og:image:secure" content="img/preview.png">
+    <meta property="og:image:secure_url" content="img/preview.png">
     <meta name="copyright" content="© 2020 Boston University">
     
     <!-- page configuration/encoding -->
@@ -15,19 +16,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/bulib-wc@latest/dist/icons/favicon.ico">
     
-    <!-- bulib-wc components and styling -->
-    <script src="https://unpkg.com/bulib-wc@latest/src/index.js?module" type="module" async defer></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulib-wc@0.1.31/dist/bundle.min.css">
-    <link rel="stylesheet" type="text/css" id="bu-banners-css" media="all"
-      href="https://www.bu.edu/orientation2020/wp-content/plugins/bu-banners/css/bu-banners.min.css?ver=1.3.3">
-
     <!-- site-specific styling -->
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./fonts.css">
+    
+    <!-- bulib-wc styling and components -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulib-wc@0.1.31/dist/bundle.min.css">
+    <link rel="stylesheet" type="text/css" id="bu-banners-css" media="all"
+      href="https://www.bu.edu/orientation2020/wp-content/plugins/bu-banners/css/bu-banners.min.css?ver=1.3.3">
+    <script src="https://unpkg.com/bulib-wc@latest/src/index.js?module" type="module" async defer></script>
 
     <!-- external scripts and additional functionality -->
     <script async defer lazyload="true" src="https://cdn.curator.io/published/7f33a582-9936-4db7-b17b-2e08548c5dd4.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5204430-10"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-5204430-10"></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -173,7 +174,7 @@
         </div>
         <div class="singleton">
           <a href="https://www.bu.edu/library/services/reference/">
-            <img alt="one of our reference librarians assists a student with a information request" src="img/service-laptop.png">
+            <img alt="one of our reference librarians assists a student with a information request" loading="lazy" src="img/service-laptop.png">
           </a>
         </div>
       </section>
@@ -181,7 +182,7 @@
       <section id="collections">
         <div class="singleton">
           <a href="https://www.bu.edu/library/research/collections/">
-            <img alt="a student sits between the stacks doing " src="img/collections-mugar.jpg">
+            <img alt="a student sits between the stacks doing research" loading="lazy" src="img/collections-mugar.jpg">
           </a>
         </div>
         <div class="info">
@@ -202,7 +203,7 @@
         </div>
         <div class="singleton">
           <a href="https://www.bu.edu/library/about/study-spaces/">
-            <img alt="a student reviews her notes on one of the long tables in the mugar building" src="img/spaces_mugar-study.jpg">
+            <img alt="a student reviews her notes on one of the long tables in the mugar building" loading="lazy" src="img/spaces_mugar-study.jpg">
           </a>
         </div>
       </section>
@@ -212,7 +213,7 @@
         <p>We have <strong>many locations</strong> across campus and along the Charles River. Find the one closest to your dorm or your first class!</p>
         <p><a class="bulib-btn large" href="https://www.bu.edu/library/about/">See All Library Locations</a></p>
         <a href="img/locations_map.png">
-          <img class="full-width" src="img/locations_map.png" alt="screenshot of a map highlighting locations of various libraries around campus">
+          <img class="full-width" src="img/locations_map.png" loading="lazy" alt="screenshot of a map highlighting locations of various libraries around campus">
         </a>
         <ul id="locations-list" class="multi-column secondary-menu">
           <li>
@@ -304,7 +305,9 @@
       import {sendGAEvent} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
       
       let didInstagramFeedLoad = function(){
-        return document.querySelectorAll("div.crt-feed div.crt-post-content").length > 0;
+        let loaded = document.querySelectorAll("#curator-feed-default-layour div.crt-feed div.crt-post-content").length > 0;
+        if(!loaded){ document.querySelectorAll("#curator-feed-default-layout em a.crt-tag").hidden = true; }
+        return loaded;
       }
 
       setTimeout( function(){
