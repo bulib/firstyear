@@ -71,7 +71,7 @@ h1.bu-banner-title {
   section { padding: 15px; }
   ul#locations-list { column-count: 1; }
   h1.bu-banner-title { font-size: 1.8em !important; }
-  div.singleton img { max-width: 100% !important; }
+  div.singleton img { max-width: 100% !important; height: auto !important; }
 }
 
 @media only screen and (min-width: 850px){
@@ -158,3 +158,11 @@ ul#locations-list > li {
 }
 
 #services img { height: 275px; }
+
+/* show 'skip to main content' button when focused */   
+a.sr-only:focus { 
+  position: relative;
+  color: white; 
+  height: auto; 
+  width: auto;   
+}
