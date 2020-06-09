@@ -3,10 +3,12 @@
   "description": "welcome and orientation to the BU libraries for first year students",
   "devDependencies": {
     "bulib-wc": "0.1.32",
-    "es-dev-server": "^1.48.1"
+    "es-dev-server": "^1.48.1",
+    "imagemin-cli": "^6.0.0"
   },
   "scripts": {
     "clean": "rm -rf node_modules/ || true && npm i",
+    "minify": "imagemin img/* --out-dir=img",
     "start": "es-dev-server --watch ./index.html"
   },
   "repository": {
