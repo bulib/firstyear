@@ -305,7 +305,7 @@
       import {sendGAEvent} from "https://unpkg.com/bulib-wc@0.1.32/src/_helpers/google_analytix.js?module";
       
       let didInstagramFeedLoad = function(){
-        let loaded = document.querySelectorAll("#curator-feed-default-layour div.crt-feed div.crt-post-content").length > 0;
+        let loaded = document.querySelectorAll("#curator-feed-default-layout .crt-post").length > 0;
         if(!loaded){ document.querySelectorAll("#curator-feed-default-layout em a.crt-tag").hidden = true; }
         return loaded;
       }
